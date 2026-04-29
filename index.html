@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch Web Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob--tl"></span>
+      <span class="blob blob--tr"></span>
+      <span class="blob blob--bl"></span>
+      <span class="blob blob--br"></span>
+    </div>
+
+    <main class="page">
+      <header class="hero">
+        <div class="hero__intro animate-in" style="--delay: 0.05s">
+          <h1 class="hero__title">Stopwatch Web Application</h1>
+          <button type="button" class="btn btn--secondary" id="btn-login">Login</button>
+        </div>
+        <div class="hero__copy glass-panel animate-in" style="--delay: 0.2s">
+          <div class="quote-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path
+                opacity="0.9"
+                d="M0 24V8h12c0 8-3.5 14.5-12 16zm22 0V8h12c0 8-3.5 14.5-12 16z"
+              />
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <section class="stopwatch-section animate-in" style="--delay: 0.35s" aria-labelledby="stopwatch-heading">
+        <h2 id="stopwatch-heading" class="visually-hidden">Stopwatch controls</h2>
+        <div class="stopwatch-card glass-panel glass-panel--strong">
+          <div class="time-display" role="timer" aria-live="polite" aria-atomic="true">
+            <span id="display">00:00:00</span>
+          </div>
+          <div class="controls" role="group" aria-label="Stopwatch actions">
+            <button type="button" class="btn btn--primary" id="btn-start">Start</button>
+            <button type="button" class="btn btn--secondary" id="btn-pause" disabled>Pause</button>
+            <button type="button" class="btn btn--ghost" id="btn-reset">Reset</button>
+            <button type="button" class="btn btn--accent" id="btn-lap" disabled>Lap</button>
+          </div>
+          <div class="laps-wrap">
+            <h3 class="laps-title">Lap times</h3>
+            <ol class="laps-list" id="laps-list" aria-live="polite"></ol>
+            <p class="laps-empty" id="laps-empty">No laps yet. Press Lap while the stopwatch is running.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
